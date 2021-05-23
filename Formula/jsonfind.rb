@@ -11,26 +11,26 @@ class Jsonfind < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/wtfox/jsonfind/releases/download/v1.0.2/jsonfind_1.0.2_Darwin_x86_64.tar.gz"
-    sha256 "c1208e7b1fedb15202f87c5dcd2aef87eac3d3c8fb9b391aaea332dcfdc24782"
+    sha256 "3ccec4aac05193e7a3b202f9a2b29d390296d7d44a0db1d87a4da8378ae5d639"
   end
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/wtfox/jsonfind/releases/download/v1.0.2/jsonfind_1.0.2_Darwin_arm64.tar.gz"
-    sha256 "8f134bfab052c79d6e9baa441c8bedce2cd18e2976c8bc7883603f48f4138593"
+    sha256 "ac82f36ce9d99e8a13db74e144b3f54ea41bdaf1f037b64ce42bdaa952fc14f0"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/wtfox/jsonfind/releases/download/v1.0.2/jsonfind_1.0.2_Linux_x86_64.tar.gz"
-    sha256 "f6a369564cfbdeaf59ce0ba35e535d6a2c32a4d7003a9815bf313e2665e40795"
+    sha256 "9ad6bbdcfbbc056babffcd75d058b708fbad4ecda10d35a543ebc74d792d0a62"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/wtfox/jsonfind/releases/download/v1.0.2/jsonfind_1.0.2_Linux_arm64.tar.gz"
-    sha256 "902960769de0bed9fc6bf394c9e06c8347198349a5aaa9e7eec5378accc0e599"
+    sha256 "9d14926eaf6b13d98cb6f1f552dbc0057dfc533472003a1a246dfdc2bf3155e7"
   end
 
   def install
-    bin.install "jsonfind"
+    bin.install "jf"
   end
 
   test do
-    system "#{bin}/jsonfind --help"
+    system "#{bin}/jf --help"
   end
 end
