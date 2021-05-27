@@ -5,25 +5,25 @@
 class Jsonfind < Formula
   desc "jf prints out dotted paths to the given value for a given json file"
   homepage "https://afox.dev/posts/jsonfind"
-  version "1.0.2"
+  version "1.0.3"
   license "MIT"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/wtfox/jsonfind/releases/download/v1.0.2/jsonfind_1.0.2_Darwin_x86_64.tar.gz"
-    sha256 "cdfe141fbb5586851197cc38eb201ffbba4ecbee946e520a7d95ac2e4def8d51"
+    url "https://github.com/WTFox/jsonfind/releases/download/v1.0.3/jsonfind_1.0.3_Darwin_x86_64.tar.gz"
+    sha256 "e0409aea095cb9064cc2d3d8dec03f001f6ae4f44f6b39fbaf8da9b2a938e164"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/wtfox/jsonfind/releases/download/v1.0.2/jsonfind_1.0.2_Darwin_arm64.tar.gz"
-    sha256 "ebe977f226bfe3770f235f6fccaf1254ee40a129ca3956c3c8fa58966b3eae89"
+    url "https://github.com/WTFox/jsonfind/releases/download/v1.0.3/jsonfind_1.0.3_Darwin_arm64.tar.gz"
+    sha256 "e88083625e32106f5ee506698ec8cdfd65cc30afbbef37ecfe149b4018e9574e"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/wtfox/jsonfind/releases/download/v1.0.2/jsonfind_1.0.2_Linux_x86_64.tar.gz"
-    sha256 "3ad5e1121129a7d1701878550239da144531036254e21f4f6a6c46dd86630594"
+    url "https://github.com/WTFox/jsonfind/releases/download/v1.0.3/jsonfind_1.0.3_Linux_x86_64.tar.gz"
+    sha256 "1785b323479c35800c04f979a085ad6283d4ab62a17ca7da82bb1418f2f74a14"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/wtfox/jsonfind/releases/download/v1.0.2/jsonfind_1.0.2_Linux_arm64.tar.gz"
-    sha256 "34646e229982c2d68f6e777f7183e67a86fc24ecc092c98e05451aa62a0fb0e4"
+    url "https://github.com/WTFox/jsonfind/releases/download/v1.0.3/jsonfind_1.0.3_Linux_arm64.tar.gz"
+    sha256 "f0a0d7b35b7d7e3642dc86d9ece87e7e2aefd5662656c94cbb38c76e3fd2b3da"
   end
 
   def install
