@@ -5,29 +5,45 @@
 class Jsonfind < Formula
   desc "jf prints out dotted paths to the given value for a given json file"
   homepage "https://afox.dev/posts/jsonfind"
-  version "1.0.3"
+  version "1.1.0"
   license "MIT"
-  bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/WTFox/jsonfind/releases/download/v1.0.3/jsonfind_1.0.3_Darwin_x86_64.tar.gz"
-    sha256 "e0409aea095cb9064cc2d3d8dec03f001f6ae4f44f6b39fbaf8da9b2a938e164"
-  end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/WTFox/jsonfind/releases/download/v1.0.3/jsonfind_1.0.3_Darwin_arm64.tar.gz"
-    sha256 "e88083625e32106f5ee506698ec8cdfd65cc30afbbef37ecfe149b4018e9574e"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/WTFox/jsonfind/releases/download/v1.0.3/jsonfind_1.0.3_Linux_x86_64.tar.gz"
-    sha256 "1785b323479c35800c04f979a085ad6283d4ab62a17ca7da82bb1418f2f74a14"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/WTFox/jsonfind/releases/download/v1.0.3/jsonfind_1.0.3_Linux_arm64.tar.gz"
-    sha256 "f0a0d7b35b7d7e3642dc86d9ece87e7e2aefd5662656c94cbb38c76e3fd2b3da"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/WTFox/jsonfind/releases/download/v1.1.0/jsonfind_1.1.0_Darwin_arm64.tar.gz"
+      sha256 "f134ceb53e6ef65d1183695b89316d6a443b40d75d629ea191f66a20e171df7e"
+
+      def install
+        bin.install "jsonfind" => "jf"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/WTFox/jsonfind/releases/download/v1.1.0/jsonfind_1.1.0_Darwin_x86_64.tar.gz"
+      sha256 "217c2fe43790b533e71afbf6ea0a2906067bbb6c4013a1aa1d0806cd3c4fb350"
+
+      def install
+        bin.install "jsonfind" => "jf"
+      end
+    end
   end
 
-  def install
-    bin.install "jsonfind" => "jf"
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/WTFox/jsonfind/releases/download/v1.1.0/jsonfind_1.1.0_Linux_arm64.tar.gz"
+      sha256 "931d82293c23764fe32b91fa175b2e00f22f0c074e0a7f1f256da7da7c7eec2d"
+
+      def install
+        bin.install "jsonfind" => "jf"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/WTFox/jsonfind/releases/download/v1.1.0/jsonfind_1.1.0_Linux_x86_64.tar.gz"
+      sha256 "8d2501c8dea562f6319928d52fd5865e4f4c50c34e4a8d7fef6dbf7379a1ed78"
+
+      def install
+        bin.install "jsonfind" => "jf"
+      end
+    end
   end
 
   test do
